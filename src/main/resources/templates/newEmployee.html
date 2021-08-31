@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>HR Management System</title>
+    <link rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+          crossorigin="anonymous">
+</head>
+<body>
+<div class="container my-2">
+        <h1>HR Management System</h1>
+          <form th:action="@{/saveEmployee}" th:object="${employee}" method="POST">
+        <!---
+        <br><input type="text" placeholder="Användare" th:field="*{userName}">
+        <input type="text" placeholder="Lösenord" th:field="*{password}">
+        <input type="text" placeholder="Bekräfta lösenord" th:name="passwordTwo"><br>
+--->
+        <!--<tr th:each="user:${ListUsers}"></tr>-->
+        <input type="text" placeholder="FirstName" th:field="*{firstname}">
+        <input type="text" placeholder="LastName" th:field="*{lastname}">
+        <input type="text" placeholder="Email" th:field="*{email}">
+        <input type="text" placeholder="Gender" th:field="*{gender}">
+        <input type="text" placeholder="Address" th:field="*{address}">
+        <input type="text" placeholder="MobileNo" th:field="*{mobileNo}">
+        <input type="text" placeholder="Department" th:field="*{department}">
+        <input type="text" placeholder="Designation" th:field="*{designation}">
+        <input type="text" placeholder="BirthDate" th:field="*{birthday}">
+        <input type="text" placeholder="JoinedDate" th:field="*{joinedDate}">
+        <input type="text" placeholder="Password" th:field="*{password}">
+        <br><input class="btn btn-primary" type="submit" value="Save Employee"><br><br>
+
+    </form>
+</div>
+</body>
+</html>

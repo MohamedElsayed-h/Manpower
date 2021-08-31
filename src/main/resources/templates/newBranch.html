@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>HR Management System</title>
+  <link rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
+</head>
+<body>
+<div class="container my-2">
+  <h1>HR Management System</h1>
+    <form th:action="@{/saveBranch}" th:object="${branch}" method="POST">
+    <!---
+    <br><input type="text" placeholder="Användare" th:field="*{userName}">
+    <input type="text" placeholder="Lösenord" th:field="*{password}">
+    <input type="text" placeholder="Bekräfta lösenord" th:name="passwordTwo"><br>
+--->
+    <!--<tr th:each="user:${ListUsers}"></tr>-->
+    <input type="text" placeholder="BranchName" th:field="*{branchName}">
+    <input type="text" placeholder="BranchCity" th:field="*{branchCity}">
+    <input type="text" placeholder="BranchEmail" th:field="*{branchEmail}">
+    <input type="text" placeholder="BranchAddress" th:field="*{branchAddress}">
+    <input type="text" placeholder="BranchTel" th:field="*{branchTel}">
+    <br><input class="btn btn-primary" type="submit" value="Save Branch"><br><br>
+
+  </form>
+</div>
+</body>
+</html>

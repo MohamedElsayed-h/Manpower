@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<form class="container text-center" th:action="@{/logginUser}" method="POST">
+    <label class="col-form-label col-10">User Name</label>
+    <input type="text"  th:name="userName" >
+    <label class="col-form-label col-10">Password</label>
+    <input type="text"  th:name="password" >
+    <input class="btn btn-primary" type="submit" value="Log in"><br>
+</form>
+</body>
+</html>

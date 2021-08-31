@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HR Management System</title>
+
+    <link rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+          crossorigin="anonymous">
+</head>
+<body>
+<div class="container my-2">
+    <img src="HR.jpg"><br>
+    <h1>Department List</h1>
+</div>
+
+<a th:href = "@{/addNewDepartment}" class="btn btn-primary btn-sm mb-3"> Add Department </a>
+<table border="1" class="table table-striped table-responsive-md">
+    <thead>
+
+
+    <th>DepartmentName</th>
+    <th>DepartmentEmail</th>
+    <th>DepartmentAddress</th>
+    <th>DepartmentTel</th>
+
+    <th>Actions</th>
+    </thead>
+
+
+    </tbody>
+    <tbody>
+    <tr th:each="department : ${ListDepartments}">
+        <td th:text="${department.departmentName}"></td>
+        <td th:text="${department.departmentEmail}"></td>
+        <td th:text="${department.departmentAddress}"></td>
+        <td th:text="${department.departmentTel}"></td>
+
+        <td> <a th:href="@{/UpdateDeptForm/{id}(id=${department.id})}" class="btn btn-primary">Update</a>
+            <a th:href="@{/DeleteDepartment/{id}(id=${department.id})}" class="btn btn-danger">Delete</a>
+        </td>
+
+
+    </tr>
+    </tbody>
+
+</table>
+</body>
+</html>

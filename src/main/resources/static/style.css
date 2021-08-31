@@ -1,0 +1,20 @@
+body{
+    background-color: bisque;
+
+}
+h1 {
+    color: blue;
+}
+input::placeholder{
+    color: royalblue;
+    font-family: cursive;
+    font-weight: bold;
+    alignment: center;
+}
+img {
+    border: transparent;
+    border-radius: 4px;
+    padding: 3px;
+    width: 100px;
+    float: left;
+}

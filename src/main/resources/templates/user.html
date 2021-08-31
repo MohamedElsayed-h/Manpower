@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+
+                <button type="button" class="navbar-toggle collapsed"
+                        data-toggle="collapse" data-target="#navbar" aria-expanded="false"
+                        aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span> <span
+                        class="icon-bar"></span> <span class="icon-bar"></span> <span
+                        class="icon-bar"></span>
+                </button>
+
+                <a class="navbar-brand" href="#" th:href="@{/}">HR Management System</a>
+            </div>
+            <div id="navbar" class="collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li sec:authorize="isAuthenticated()"><a th:href="@{/logginUser}">Login</a></li>
+                </ul>
+                <ul class="nav navbar-nav">
+                    <li sec:authorize="isAuthenticated()"><a th:href="@{/Help}">Help</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <br>
+    <br>
+    <meta charset="UTF-8">
+    <title>Registeration Form</title>
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+          crossorigin="anonymous">
+
+
+<!--
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+-->
+</head>
+
+<body>
+
+
+
+
+<!--<div class="container my-2">
+       <h1>User List</h1>-->
+
+
+
+<!--
+<h1 style="color:blue;">A Blue Heading</h1>
+<h1 style="color:blue;">Användare</h1>
+-->
+
+<!---------Loggedin----------->
+<!--<div class="m-3">
+
+</div>
+<form th:action="@{/saveUser}" th:object="${user}" method="POST">-->
+
+
+<div class="container my-2">
+
+     <div class="container text-center">
+        <!-- <img src=" test1.jpg"><br>-->
+         <br>
+         <br>
+         <br><input class="btn btn-danger" type="submit" value="You can login if you are already registered">
+
+     </div>
+
+
+    <br>
+    <br>
+
+
+    <!-------------Create login------------->
+<!--
+    <form class="container text-center" th:action="@{/logginUser}" method="POST">
+        <label class="col-form-label col-10">User Name</label>
+        <input type="text"  th:name="userName" >
+        <label class="col-form-label col-10">Password</label>
+        <input type="text"  th:name="password" >
+        <input class="btn btn-primary" type="submit" value="Log in"><br>
+    </form>
+-->
+</div>
+
+<div class="container my-2">
+
+    <form th:action="@{/saveUser}" th:object="${user}" method="POST">
+        <div class="m-3">
+        <h1>Registration Form </h1>
+   <div class="form-group row">
+        <label class="col-form-label col-10">User Name</label>
+        <input type="text"  th:field="*{userName}" class="form-control" required minlength="2"
+               maxlength="20">
+    </div>
+
+    <div class="form-group row">
+        <label class="col-form-label col-10">Password</label>
+        <input type="text"  th:field="*{password}" class="form-control" required minlength="2"
+               maxlength="20">
+    </div>
+
+    <div class="form-group row">
+        <label class="col-form-label col-10">Confirm password</label>
+        <input type="text"  th:name="passwordTwo" class="form-control" required minlength="2"
+               maxlength="20">
+    </div>
+
+   <!-- <input type="text" placeholder="Bekräfta lösenord" th:name="passwordTwo"><br>-->
+
+    <div class="form-group row">
+        <label class="col-form-label col-10">Email</label>
+        <input type="text"  th:field="*{email}" class="form-control" required minlength="2"
+               maxlength="20">
+    </div>
+
+    <div class="form-group row">
+        <label class="col-form-label col-10">First Name</label>
+        <input type="text"  th:field="*{firstname}" class="form-control" required minlength="2"
+               maxlength="20">
+    </div>
+
+    <div class="form-group row">
+        <label class="col-form-label col-10">Last Name</label>
+        <input type="text"  th:field="*{lastname}" class="form-control" required minlength="2"
+               maxlength="20">
+    </div>
+        <br><input class="btn btn-primary" type="submit" value="Register User"><br><br>
+
+    </form>
+
+    <p th:text="${msg}"></p>
+
+    <!--   <br><input type="text" placeholder="Användare" th:field="*{userName}">
+    <input type="text" placeholder="Lösenord" th:field="*{password}">
+    <input type="text" placeholder="Bekräfta lösenord" th:name="passwordTwo"><br>
+    <input type="text" placeholder="Postmail" th:field="*{email}">
+    <input type="text" placeholder="Förnamn" th:field="*{firstname}">
+    <input type="text" placeholder="Efternamn" th:field="*{lastname}">-->
+
+
+<!--
+<table border="1" class="table table-striped table-responsive-md">
+    <thead>
+    <th>Förnamn</th>
+    <th>Efternamn</th>
+    <th>Postmail</th>
+     <th>Actions</th>
+    </thead>
+    <h2>Sparad användare</h2>
+    <tbody>
+       <tr th:each="user:${users}">
+        <td th:text="${user.userName}"></td>
+        <td th:text="${user.lastname}"></td>
+        <td th:text="${user.getEmail()}"></td>
+
+
+      </tr>
+
+    </tbody>
+
+</table>
+
+
+<table class="table table-striped table-responsive-md">
+    <thead>
+    <tr>
+
+          <th> userName     </th>
+          <th>   firstname  </th>
+          <th>   email      </th>
+          <th>   Actions    </th>
+    </tr>
+    </thead>
+
+
+    </th>
+
+    <tbody>
+
+    <tr th:each="user:${users}">
+
+        <td th:text="${user.userName}"> userName   </td>
+        <td th:text="${user.firstname}"> firstname </td>
+        <td th:text="${user.getEmail()}"> email    </td>
+
+
+
+        <td>
+            <form action="#" th:action="@{ '/edit/' +${user.id}}" th:method="get">
+                <button class="btn btn-primary" type="submit" >Edit/Delete</button>
+            </form>
+        </td>
+
+    </tr>
+
+
+
+    </tbody>
+
+
+
+
+</table>
+
+<form th:action="@{/saveUserParam}" method="POST">
+    <input type="text" placeholder="Användare" th:name="userName"><br>
+    <input type="text" placeholder="Postmail" th:name="email"><br>
+    <input type="text" placeholder="Lösenord" th:name="passwordOne"><br>
+    <input type="text" placeholder="Bekräfta lösenord" th:name="passwordTwo"><br>
+    <input type="submit" value="Registrera user">
+</form>
+
+
+
+
+
+<div th:each="job: ${jobs}">
+    <p th:text="${job.description}" />
+</div>
+
+<form action="#" th:action="@{/save-user}" th:object="${user}" method="POST">
+    <input type="text" placeholder="Användare" th:field="*{userName}">
+    <input type="text" placeholder="Förnamn" th:field="*{firstname}">
+    <input type="text" placeholder="Efternamn" th:field="*{lastname}">
+    <input type="text" placeholder="Lösenord" th:field="*{password}">
+    <input type="text" placeholder="foto" th:field="*{image}">
+
+    <br><input type="submit" value="Update user"><br><br>
+</form>
+
+<td>
+            <form action="#" th:action="@{ '/delete/{id}' (id=${user.id})}" th:method="delete">
+                <button type="submit" id="submitButton">Delete</button>
+            </form>
+</td>
+<td>
+    <form action="#" th:action="@{ '/edit/{id}' (id=${user.id})}" th:method="get">
+        <button type="submit" >Edit</button>
+    </form>
+</td>
+-->
+</body>
+</html>
