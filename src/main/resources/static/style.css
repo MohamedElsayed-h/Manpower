@@ -11,10 +11,11 @@ input::placeholder{
     font-weight: bold;
     alignment: center;
 }
+
+
 img {
     border: transparent;
     border-radius: 4px;
-    padding: 3px;
-    width: 100px;
+    padding: 4px;
     float: left;
 }

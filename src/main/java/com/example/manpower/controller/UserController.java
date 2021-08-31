@@ -73,13 +73,13 @@ public class UserController {
     }
     @GetMapping("/success")
     public String success(@ModelAttribute("user") User user, Model model){
-        model.addAttribute("msg","Du har sparat");
+        model.addAttribute("msg","You are registered now!");
         return "user";
     }
 
     @GetMapping("/failed")
     public String failed(@ModelAttribute("user") User user,Model model){
-        model.addAttribute("msg","Skriv lösenord rätt!!!");
+        model.addAttribute("msg","Write a correct password!");
         return "index";
     }
 /*
