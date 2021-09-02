@@ -14,14 +14,17 @@
                         class="icon-bar"></span>
                 </button>
 
+
                 <a class="navbar-brand" href="#" th:href="@{/}">HR Management System</a>
             </div>
             <div id="navbar" class="collapse navbar-collapse">
                 <ul class="nav navbar-nav">
                     <li sec:authorize="isAuthenticated()"><a th:href="@{/logginUser}">Login</a></li>
+
                 </ul>
                 <ul class="nav navbar-nav">
                     <li sec:authorize="isAuthenticated()"><a th:href="@{/Help}">Help</a></li>
+                    <img src="HR_img2.jpg"><br>
                 </ul>
             </div>
         </div>
@@ -71,12 +74,12 @@
 
 <div class="container my-2">
     <div class="container my-2">
-        <br>
-        <img src="HR_img2.jpg"><br>
     </div>
 
      <div class="container text-center">
         <!-- <img src=" test1.jpg"><br>-->
+         <br>
+         <br>
          <br>
          <br>
          <br><input class="btn btn-danger" type="submit" value="You can login if you are already registered">
@@ -84,8 +87,7 @@
      </div>
 
 
-    <br>
-    <br>
+
 
 
     <!-------------Create login------------->
